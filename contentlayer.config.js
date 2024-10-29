@@ -1,10 +1,15 @@
 import { defineDocumentType, makeSource } from "@contentlayer/source-files";
-import { description, title } from "./project files/siteMetaData";
+import { description, theme, title } from "./project files/siteMetaData";
 import readingTime from "reading-time";
+import remarkGfm from "remark-gfm";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypePrettyCode from "rehype-pretty-code";
 
 const Blog = defineDocumentType(() => ({
   name: "Blog",
   filePathPattern: "**/**/*.mdx",
+  contentType: "mdx",
   fields: {
     title: {
       type: "string",
@@ -51,8 +56,20 @@ const Blog = defineDocumentType(() => ({
   },
 }));
 
+const codeOptions = {
+  theme: "dracula",
+};
+
 export default makeSource({
   /* options */
   contentDirPath: "content",
   documentTypes: [Blog],
+  mdx: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [
+      rehypeSlug,
+      [rehypeAutolinkHeadings, { behaviour: "append" }],
+      [rehypePrettyCode, codeOptions],
+    ],
+  },
 });
