@@ -2,6 +2,7 @@ import BlogDetails from "@/components/Blog/BlogDetails";
 import RenderMdx from "@/components/Blog/RenderMdx";
 import Tag from "@/components/Elements/Tag";
 import { allBlogs } from "contentlayer/generated";
+import { slug } from "github-slugger";
 import Image from "next/image";
 
 export default function BlogPage({ params }) {
@@ -13,7 +14,7 @@ export default function BlogPage({ params }) {
         <div className="w-full z-10 flex flex-col items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <Tag
             name={blog.tags[0]}
-            link={`/categories/${blog.tags[0]}`}
+            link={`/categories/${slug(blog.tags[0])}`}
             className="px-6 text-sm py-2"
           />
           <h1 className="inline-block mt-6 font-semibold capitalize text-light text-5xl leading-normal relative w-5/6">
