@@ -3,6 +3,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { DribbbleIcon, GithubIcon, LinkedinIcon, TwitterIcon } from "../Icons";
 import Link from "next/link";
+import siteMetadata from "@/utils/siteMetaData";
 
 const Footer = () => {
   const {
@@ -24,8 +25,7 @@ const Footer = () => {
       </p>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="mt-6 min-w-[384px] flex items-stretch bg-light p-2 rounded mx-4"
-      >
+        className="mt-6 min-w-[384px] flex items-stretch bg-light p-2 rounded mx-4">
         <input
           type="text"
           placeholder="Enter Your Email"
@@ -39,19 +39,24 @@ const Footer = () => {
         />
       </form>
       <div className="flex items-center mt-8">
-        <a href="http://example.com" className="inline-block w-6 h-6 mr-4">
+        <a
+          href={siteMetadata.linkedin}
+          className="inline-block w-6 h-6 mr-4">
           <LinkedinIcon className="hover:scale-125 transition-all ease duration-200" />
         </a>
-        <a href="http://example.com" className="inline-block w-6 h-6 mr-4">
+        <a
+          href={siteMetadata.twitter}
+          className="inline-block w-6 h-6 mr-4">
           <TwitterIcon className="hover:scale-125 transition-all ease duration-200" />
         </a>
         <a
-          href="http://example.com"
-          className="inline-block w-6 h-6 mr-4 fill-light"
-        >
+          href={siteMetadata.github}
+          className="inline-block w-6 h-6 mr-4 fill-light">
           <GithubIcon className="hover:scale-125 transition-all ease duration-200" />
         </a>
-        <a href="http://example.com" className="inline-block w-6 h-6 mr-4">
+        <a
+          href={siteMetadata.dribbble}
+          className="inline-block w-6 h-6 mr-4">
           <DribbbleIcon className="hover:scale-125 transition-all ease duration-200" />
         </a>
       </div>
@@ -59,12 +64,16 @@ const Footer = () => {
         <span className="text-center">
           &copy; 2024 umutakin. All rights reserved.
         </span>
-        <Link href="/sitemap.xml" className="text-center underline">
+        <Link
+          href="/sitemap.xml"
+          className="text-center underline">
           sitemap.xml
         </Link>
         <div className="text-center">
           Made with &hearts; by{" "}
-          <a href="https://umutakin.com" className="underline">
+          <a
+            href="https://umutakin.com"
+            className="underline">
             umutakin
           </a>
         </div>

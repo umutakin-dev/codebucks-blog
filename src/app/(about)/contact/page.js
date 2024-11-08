@@ -1,5 +1,12 @@
 import ContactForm from "@/components/Contact/ContactForm";
 import LottieAnimation from "@/components/Contact/LottieAnimation";
+import siteMetadata from "@/utils/siteMetaData";
+
+export const metadata = {
+  metadataBase: new URL(siteMetadata.siteUrl),
+  title: "Contact Me",
+  description: `Contact me through this form or email me at ${siteMetadata.email}`,
+};
 
 export default function Contact() {
   return (
