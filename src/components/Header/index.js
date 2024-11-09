@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Logo from "./Logo";
 import {
@@ -8,8 +10,11 @@ import {
   TwitterIcon,
 } from "../Icons";
 import siteMetadata from "@/utils/siteMetaData";
+import { useThemeSwitch } from "../Hooks/useThemeSwitch";
 
 const Header = () => {
+  const [mode, setMode] = useThemeSwitch();
+
   return (
     <header className="w-full p-4 px-10 flex items-center justify-between">
       <Logo />
@@ -29,7 +34,10 @@ const Header = () => {
           className="mx-2">
           Contact
         </Link>
-        <button>
+        <button
+          onClick={() => {
+            setMode(mode === "light" ? "dark" : "light");
+          }}>
           <SunIcon />
         </button>
       </nav>

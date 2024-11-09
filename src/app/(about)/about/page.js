@@ -1,5 +1,6 @@
 import AboutCoverSection from "@/components/About/AboutCoverSection";
 import Skills from "@/components/About/Skills";
+import siteMetadata from "@/utils/siteMetaData";
 import Link from "next/link";
 
 export const metadata = {
