@@ -6,12 +6,14 @@ import {
   DribbbleIcon,
   GithubIcon,
   LinkedinIcon,
+  MoonIcon,
   SunIcon,
   TwitterIcon,
 } from "../Icons";
 import siteMetadata from "@/utils/siteMetaData";
 import { useThemeSwitch } from "../Hooks/useThemeSwitch";
 import { useState } from "react";
+import { cx } from "@/utils";
 
 const Header = () => {
   const [mode, setMode] = useThemeSwitch();
@@ -116,8 +118,16 @@ const Header = () => {
         <button
           onClick={() => {
             setMode(mode === "light" ? "dark" : "light");
-          }}>
-          <SunIcon />
+          }}
+          className={cx(
+            "w-6 h-6 ease ml-2 flex items-center justify-center rounded-full p-1",
+            mode === "light" ? "bg-dark text-light" : "bg-light text-dark",
+          )}>
+          {mode === "light" ? (
+            <MoonIcon className="fill-dark" />
+          ) : (
+            <SunIcon className="fill-dark" />
+          )}
         </button>
       </nav>
 
@@ -153,8 +163,16 @@ const Header = () => {
         <button
           onClick={() => {
             setMode(mode === "light" ? "dark" : "light");
-          }}>
-          <SunIcon />
+          }}
+          className={cx(
+            "w-6 h-6 ease ml-2 flex items-center justify-center rounded-full p-1",
+            mode === "light" ? "bg-dark text-light" : "bg-light text-dark",
+          )}>
+          {mode === "light" ? (
+            <MoonIcon className="fill-dark" />
+          ) : (
+            <SunIcon className="fill-dark" />
+          )}
         </button>
       </nav>
 

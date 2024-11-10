@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import siteMetadata from "@/utils/siteMetaData";
 import Script from "next/script";
+import ThemeScript from "@/components/ThemeScript";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -61,7 +62,8 @@ export default function RootLayout({ children }) {
           manrope.variable,
           "font-rm bg-light dark:bg-dark",
         )}>
-        <Script
+        <ThemeScript />
+        {/* <Script
           id="theme-switcher"
           strategy="beforeInteractive">
           {`if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -69,7 +71,7 @@ export default function RootLayout({ children }) {
             } else {
               document.documentElement.classList.remove('dark')
             }`}
-        </Script>
+        </Script> */}
         <Header />
         {children}
         <Footer />
