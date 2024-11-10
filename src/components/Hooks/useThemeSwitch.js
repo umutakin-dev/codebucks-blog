@@ -26,7 +26,7 @@ export function useThemeSwitch() {
     }
   };
 
-  const [mode, setMode] = useState(getUserPreference());
+  const [mode, setMode] = useState("dark");
 
   useEffect(() => {
     const mediaQuery = window.matchMedia(preferDarkQuery);
