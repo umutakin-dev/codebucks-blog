@@ -7,7 +7,7 @@ const Categories = ({ categories, currentSlug }) => {
     <div
       className="
         py-4 px-0 md:px-10 sxl:px-20 
-        mt-10 mx-10 
+        mt-10 mx-5 md:mx-10 
         text-dark dark:text-light
         font-medium 
         border-t-2 border-b-2 border-solid 
