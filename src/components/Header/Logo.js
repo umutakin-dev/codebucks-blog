@@ -18,6 +18,8 @@ const Logo = () => {
           src={profileImage}
           alt="umutakin"
           className="w-full h-auto rounded-full"
+          sizes="33vw"
+          priority
         />
       </div>
       <span

@@ -36,6 +36,8 @@ const HomeCoverSection = ({ blogs }) => {
             object-center object-cover 
             rounded-3xl 
             -z-10"
+          sizes="100vw"
+          priority
         />
         <div
           className="

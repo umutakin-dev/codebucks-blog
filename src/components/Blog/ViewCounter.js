@@ -27,7 +27,6 @@ const ViewCounter = ({ slug, incrementCount = false, showCount = true }) => {
     };
 
     if (!incrementCount) {
-      console.log("INCREMENT");
       incrementView();
     }
   }, [slug, incrementCount]);

@@ -4,7 +4,9 @@
 const { withContentlayer } = require("next-contentlayer");
 
 const nextConfig = {
-  // reactStrictMode: false, // Disable React Strict Mode
+  compiler: {
+    removeConsole: true,
+  },
 };
 
 module.exports = withContentlayer({ ...nextConfig });

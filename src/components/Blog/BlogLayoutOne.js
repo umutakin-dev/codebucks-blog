@@ -27,6 +27,7 @@ const BlogLayoutOne = ({ blog }) => {
           object-center object-cover 
           rounded-xl 
           group-hover:scale-105 transition-all ease duration-300"
+        sizes="(max-width: 1180px) 100vw, 50vw"
       />
       <div
         className="
