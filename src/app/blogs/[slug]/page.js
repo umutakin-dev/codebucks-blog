@@ -69,13 +69,28 @@ export default function BlogPage({ params }) {
           <Tag
             name={blog.tags[0]}
             link={`/categories/${slug(blog.tags[0])}`}
-            className="px-6 text-sm py-2"
+            className="
+              px-6 py-2
+              text-sm"
           />
-          <h1 className="inline-block mt-6 font-semibold capitalize text-light text-5xl leading-normal relative w-5/6">
+          <h1
+            className="
+              inline-block
+              w-5/6 
+              mt-6 
+              font-semibold capitalize text-light 
+              text-2xl md:text-3xl lg:text-5xl 
+              leading-normal 
+              relative">
             {blog.title}
           </h1>
         </div>
-        <div className="absolute top-0 left-0 right-0 bottom-0 h-full bg-dark/60" />
+        <div
+          className="
+            absolute top-0 left-0 right-0 bottom-0 
+            h-full 
+            bg-dark/60 dark:bg-dark/40"
+        />
         <Image
           src={blog.image.filePath.replace("../public", "")}
           placeholder="blur"
@@ -91,10 +106,24 @@ export default function BlogPage({ params }) {
         slug={params.slug}
       />
 
-      <div className="grid grid-cols-12 gap-16 mt-8 px-10">
-        <div className="col-span-4">
+      <div
+        className="
+          grid 
+          grid-cols-12 
+          gap-y-8 lg:gap-8 sxl:gap-16 
+          mt-8 
+          px-5 md:px-10">
+        <div className="col-span-12 lg:col-span-4">
           <details
-            className="border-[1px] border-solid border-dark text-dark rounded-lg p-4 sticky top-6 max-h-[80vh] overflow-hidden overflow-y-auto"
+            className="
+              max-h-[80vh] 
+              p-4 
+              sticky top-6 
+              border-[1px] border-solid 
+              border-dark dark:border-light 
+              text-dark dark:text-light 
+              rounded-lg 
+              overflow-hidden overflow-y-auto"
             open>
             <summary className="text-lg font-semibold capitalize cursor-pointer">
               Table of Contents

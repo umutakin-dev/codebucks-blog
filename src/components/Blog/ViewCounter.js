@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 
 const supabase = createClientComponentClient();
 
-const ViewCounter = ({ slug, noCount = false, showCount = true }) => {
+const ViewCounter = ({ slug, incrementCount = false, showCount = true }) => {
   const [views, setViews] = useState(0);
 
   useEffect(() => {
@@ -26,10 +26,11 @@ const ViewCounter = ({ slug, noCount = false, showCount = true }) => {
       }
     };
 
-    if (!noCount) {
+    if (!incrementCount) {
+      console.log("INCREMENT");
       incrementView();
     }
-  }, [slug, noCount]);
+  }, [slug, incrementCount]);
 
   useEffect(() => {
     const getViews = async () => {
